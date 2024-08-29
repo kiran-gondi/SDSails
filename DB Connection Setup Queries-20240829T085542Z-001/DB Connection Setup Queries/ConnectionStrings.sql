@@ -30,11 +30,11 @@ GO
 
 to insert below data using insert statements
 ConnectionId	DBName	ConnectionString	ProviderName
-961119D8-AB34-486A-83F1-E5A512BA12D9	CPT_WO_SD	Data Source=54.154.28.148;Initial Catalog=CPT_WO_SD;User ID=sa;Pwd=1qaz2wsx;	System.Data.SqlClient
+961119D8-AB34-486A-83F1-E5A512BA12D9	CPT_WO_SD	Data Source=XX.XXX.XX.XXX;Initial Catalog=YOUR_DB_NAME;User ID=YOUR_USER;Pwd=YOUR_PWD;	System.Data.SqlClient
 
 
 insert into [ApplicationConfigurations].[dbo].[ConnectionStrings] values
 ('36A541EA-FDBA-45ED-9315-64A82FD67A8E',
  'CPT_WO_SD_Dev',	
- 'Data Source=54.154.28.148;Initial Catalog=CPT_WO_SD;User ID=sa;Pwd=1qaz2wsx;',
+ 'Data Source=XX.XXX.XX.XXX;Initial Catalog=YOUR_DB_NAME;User ID=YOUR_USER;Pwd=YOUR_PWD',
  'System.Data.SqlClient')  
