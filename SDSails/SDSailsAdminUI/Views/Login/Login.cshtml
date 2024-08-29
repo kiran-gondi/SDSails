@@ -1,0 +1,50 @@
+﻿@model SDSailsModel.Models.UserInfo
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("ValidateLogin", "Login", FormMethod.Post, new { @id = "FormCollection" }))
+{
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 padtop50">
+            <div class="highlight">
+
+                <div class="row padtop50">
+                    <div class="col-md-3 col-md-offset-2">
+                        Email address:
+                    </div>
+                    <div class="col-md-6">
+                        @*<input type="text" aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" size="40" value="" name="your-name">*@
+                        @Html.TextBoxFor(model => model.UserName, new { id = "userName", @class = "form-control", @placeholder = "Email address" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-md-offset-2">
+                        Password:
+                    </div>
+                    <div class="col-md-6">
+                        @*<input type="text" aria-invalid="false" aria-required="true" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" size="40" value="" name="your-name">*@
+                        @Html.PasswordFor(model => model.Password, new { id = "userPassword", @class = "form-control", @placeholder = "Password" })
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <input type="submit" value="Login" class="wpcf7-form-control wpcf7-submit pull-right" />
+                    </div>
+                </div>
+
+                @if (@ViewBag.LoginErrorMessage != null)
+                {
+                    <div class="alert alert-danger alert-dismissible" role="alert">@ViewBag.LoginErrorMessage</div>
+                }
+                <div>@Html.ValidationSummary()</div>
+
+            </div>
+        </div>
+    </div>
+}
